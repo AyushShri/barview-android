@@ -5,9 +5,15 @@ info:
   description: Buy or rent spacecrafts
 
 paths:
-  /spacecrafts/{spacecraftId}:
+  /spacecrafts/{spacecraftId}/{spacecraftNumber}:
     parameters:
       - name: spacecraftId
+        description: The unique identifier of the spacecraft
+        in: path
+        required: true
+        schema:
+          $ref: '#/components/schemas/SpacecraftId'
+      - name: spacecraftNumber
         description: The unique identifier of the spacecraft
         in: path
         required: true
